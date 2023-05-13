@@ -1,16 +1,27 @@
 import csv
+import sys
 
-
+def izmijenaTekstaSaRijeci():
+    global zamjenaVrijednost
+    zamjenaVrijednost = input("Upisite novi sadrzaj redka: ") 
 
 def unosImenaStupca():
-    global imeOriginalneDatoteke
-    imeDat = input("Unesite ime originalne datoteke: ")
-    imeOriginalneDatoteke = f"./{imeDat}.csv"
-    global imeStupcaZamjena
-    imeStupcaZamjena = input("Unesite ime stupca kojeg zelite izmijeniti: ")
-    print(imeStupcaZamjena)
-    global imeOutputDatoteke
-    imeOutputDatoteke = f"{imeDat}_EDITED.csv"
+    # global imeOriginalneDatoteke
+    # imeDat = input("Unesite ime originalne datoteke: ")
+    # imeOriginalneDatoteke = f"./{imeDat}.csv"
+    # global imeStupcaZamjena
+    # imeStupcaZamjena = input("Unesite ime stupca kojeg zelite izmijeniti: ")
+    # print(imeStupcaZamjena)
+    # global imeOutputDatoteke
+    # imeOutputDatoteke = f"{imeDat}_EDITED.csv"
+    odabir = input("Odaberite sta zelite napraviti s tekstom:\n"
+    "1) Manualno upisi s kojom vrijednoscu kojom zelis\n"
+    "2) Skrati recenicu na odredeni broj rijeci\n")
+    if odabir == "1":
+        izmijenaTekstaSaRijeci()
+        print("odabrano")
+    else:
+        sys.exit()
 
 imeStupcaZamjena = "PROPERTY"
 zamjenaVrijednost = "zamjenaVrijednost"
@@ -18,7 +29,6 @@ imeOriginalneDatoteke = "./drugiMailTablicaCSV.csv"
 imeOutputDatoteke = "testOutputFile.csv"
 
 unosImenaStupca()
-
 with open(imeOriginalneDatoteke, newline="", encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile, delimiter=";")
     new_rows = []
