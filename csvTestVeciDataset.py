@@ -9,13 +9,14 @@ with open(imeOriginalneDatoteke, newline="", encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile, delimiter=";")
     new_rows = []
     for row in reader:
-        row[imeStupcaZamjena] = zamjenaVrijednost
+        row["PROPERTY"] = zamjenaVrijednost
         # Append the modified row to the list
 
         new_rows.append(row)
     for row in new_rows:
-        print(row[imeStupcaZamjena])
-    
+        #print(row[imeStupcaZamjena])
+        break
+        
     # Reset the file pointer to the beginning of the file
 
     csvfile.seek(0)
@@ -23,12 +24,13 @@ with open(imeOriginalneDatoteke, newline="", encoding="utf-8") as csvfile:
 
     with open(imeOutputDatoteke, "w", newline="", encoding="utf-8") as file:
         # Create a DictWriter object for the output file
+        print(reader.fieldnames)
         writer = csv.DictWriter(file, reader.fieldnames)
 
         # Write the header row
         writer.writeheader()
 
         # Write the data rows
-        for row in reader:
-            writer.writerow(new_rows)
+        for row in new_rows:
+            writer.writerow(row)
             # print("radi")

@@ -1,0 +1,58 @@
+﻿Destination,ID_CMS_PROPERTY,PROPERTY,recommendation_1,id_cms_rec1,recommendation_2,id_cms_rec2
+Poreč,99762,zamjenaVrijednost,Isabella Valamar Collection Island Resort 4* / 5*,210,Valamar Parentino Hotel 4*,124996
+Poreč,210,zamjenaVrijednost,Marea Valamar Collection Suites 5*,99762,Valamar Parentino Hotel 4*,124996
+Poreč,57662,zamjenaVrijednost,Valamar Diamant Hotel 4* & Residence 3*,91173,Valamar Parentino Hotel 4*,124996
+Poreč,91173,zamjenaVrijednost,Valamar Tamaris Resort 4*,57662,Valamar Parentino Hotel 4*,124996
+Poreč,221,zamjenaVrijednost,Isabella Valamar Collection Island Resort 4* / 5*,210,Valamar Diamant Hotel 4* & Residence 3*,91173
+Poreč,34,zamjenaVrijednost,Rubin Sunny Hotel by Valamar 3*,224,Valamar Diamant Hotel 4* & Residence 3*,91173
+Poreč,124996,zamjenaVrijednost,Isabella Valamar Collection Island Resort 4* / 5*,210,Marea Valamar Collection Suites 5*,99762
+Poreč,35,zamjenaVrijednost,Rubin Sunny Hotel by Valamar 3*,224,Valamar Diamant Hotel 4* & Residence 3*,91173
+Poreč,224,zamjenaVrijednost,Crystal Sunny Hotel by Valamar 4*,34,Lanterna Sunny Resort by Valamar 2*,233
+Poreč,233,zamjenaVrijednost,Rubin Sunny Hotel by Valamar 3*,224,Crystal Sunny Hotel by Valamar 4*,34
+Poreč,127331,zamjenaVrijednost,Lanterna Premium Camping Resort 4*,127196,Krk Premium Camping Resort 5*,127369
+Poreč,127196,zamjenaVrijednost,Krk Premium Camping Resort 5*,127369,Istra Premium Camping Resort 5*,127331
+Poreč,201,zamjenaVrijednost,x,,x,
+Poreč,127407,zamjenaVrijednost,Lanterna Premium Camping Resort 4*,127196,Marina Camping Resort 4*,127397
+Poreč,127386,zamjenaVrijednost,Tunarica Sunny Camping 2*,127441,Orsera Camping Resort 3*,127407
+Rab,71410,zamjenaVrijednost,Valamar Carolina Hotel & Villas 4*,74170,Valamar Padova Hotel 4*,127893
+Rab,72286,zamjenaVrijednost,Valamar Carolina Hotel & Villas 4*,74170,Imperial Valamar Collection Hotel 4*,71410
+Rab,74170,zamjenaVrijednost,Imperial Valamar Collection Hotel 4*,71410,Valamar Padova Hotel 4*,127893
+Rab,74188,zamjenaVrijednost,Suha Punta Apartments by Valamar 3*,74747,Valamar Padova Hotel 4*,127893
+Rab,74747,zamjenaVrijednost,San Marino Sunny Resort by Valamar 3*,74188,Valamar Padova Hotel 4*,127893
+Rab,127893,zamjenaVrijednost,San Marino Camping Resort 4*,128023,Ježevac Premium Camping Resort 4*,127353
+Rab,128023,zamjenaVrijednost,Padova Premium Camping Resort 4*,127893,Ježevac Premium Camping Resort 4*,127353
+Makarska,102655,zamjenaVrijednost,Valamar Tirena Hotel 4*,32,Valamar Amicor Green Resort 4*,217144
+Makarska,103309,zamjenaVrijednost,HVAR [PLACESHOTEL] by Valamar,137092,Valamar Meteor Hotel 4*,102655
+Makarska,104315,zamjenaVrijednost,Lanterna Sunny Resort by Valamar 2*,233,Suha Punta Apartments by Valamar 3*,74747
+Rabac,69362,zamjenaVrijednost,Valamar Bellevue Resort 4*,71421,Isabella Valamar Collection Island Resort 4* / 5*,210
+Rabac,86394,zamjenaVrijednost,Marea Valamar Collection Suites 5*,99762,Valamar Bellevue Resort 4*,71421
+Rabac,71421,zamjenaVrijednost,Girandella Valamar Collection Resort 4*/5*,69362,Valamar Sanfior Hotel & Casa 4*,90028
+Rabac,90028,zamjenaVrijednost,Valamar Bellevue Resort 4*,71421,Girandella Valamar Collection Resort 4*/5*,69362
+Rabac,232,zamjenaVrijednost,Miramar Sunny Hotel & Residence by Valamar 3*,216,Valamar Sanfior Hotel & Casa 4*,90028
+Rabac,216,zamjenaVrijednost,Valamar Sanfior Hotel & Casa 4*,90028,Allegro Sunny Hotel & Residence by Valamar 3*,232
+Rabac,127397,zamjenaVrijednost,Lanterna Premium Camping Resort 4*,127196,Orsera Camping Resort 3*,127407
+Rabac,127441,zamjenaVrijednost,Brioni Sunny Camping 2*,127386,Orsera Camping Resort 3*,127407
+Hvar,217144,zamjenaVrijednost,Valamar Tirena Hotel 4*,32,Valamar Meteor Hotel 4*,102655
+Hvar,137092,zamjenaVrijednost,DALMACIJA [PLACESHOTEL] by Valamar,103309,Valamar Argosy Hotel 4*,218
+Hvar,136070,zamjenaVrijednost,Rivijera Sunny Resort by Valamar 2*,104315,Club Dubrovnik Sunny Hotel by Valamar 3*,19
+Dubrovnik,220,zamjenaVrijednost,Valamar Lacroma Dubrovnik Hotel 4*,204,Valamar Argosy Hotel 4*,218
+Dubrovnik,204,zamjenaVrijednost,Valamar Argosy Hotel 4*,218,Valamar Tirena Hotel 4*,32
+Dubrovnik,218,zamjenaVrijednost,Valamar Lacroma Dubrovnik Hotel 4*,204,Dubrovnik President Valamar Collection Hotel 5*,220
+Dubrovnik,32,zamjenaVrijednost,Valamar Lacroma Dubrovnik Hotel 4*,204,Dubrovnik President Valamar Collection Hotel 5*,220
+Dubrovnik,19,zamjenaVrijednost,Valamar Tirena Hotel 4*,32,Valamar Lacroma Dubrovnik Hotel 4*,204
+Dubrovnik,127432,zamjenaVrijednost,x,,x,
+Krk,194,zamjenaVrijednost,Corinthia Baška Sunny Hotel by Valamar 3*,55782,Zvonimir Sunny Hotel by Valamar 4*,55781
+Krk,55779,zamjenaVrijednost,Valamar Villa Adria 4*,55780,Zvonimir Sunny Hotel by Valamar 4*,55781
+Krk,55781,zamjenaVrijednost,Corinthia Baška Sunny Hotel by Valamar 3*,55782,Koralj Sunny Hotel by Valamar 3*,194
+Krk,55780,zamjenaVrijednost,Valamar Atrium Baška Residence 4* & 5*,55779,Corinthia Baška Sunny Hotel by Valamar 3*,55782
+Krk,55782,zamjenaVrijednost,Zvonimir Sunny Hotel by Valamar 4*,55781,Koralj Sunny Hotel by Valamar 3*,194
+Krk,127369,zamjenaVrijednost,Ježevac Premium Camping Resort 4*,127353,Baška Beach Camping Resort 4*,127870
+Krk,127353,zamjenaVrijednost,Baška Beach Camping Resort 4*,127870,Krk Premium Camping Resort 5*,127369
+Krk,127870,zamjenaVrijednost,Ježevac Premium Camping Resort 4*,127353,Krk Premium Camping Resort 5*,127369
+Krk,127885,zamjenaVrijednost,x,,x,
+Krk,127416,zamjenaVrijednost,Baška Beach Camping Resort 4*,127870,Ježevac Premium Camping Resort 4*,127353
+Ober,224918,zamjenaVrijednost,Valamar Obertauern Hotel 4*,105569,Obertauern PLACES by Valamar,
+Ober,105569,zamjenaVrijednost,Kesselspitze Valamar Collection Hotel 5*,224918,Obertauern PLACES by Valamar,
+Ober,,zamjenaVrijednost,Valamar Obertauern Hotel 4*,105569,Kesselspitze Valamar Collection Hotel 5*,224918
+,,zamjenaVrijednost,,,,
+,127893,zamjenaVrijednost,,,,
