@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div style="display: inline-block;">
+            <h1 id="prviResortOpis">Heading</h1>
+            <button style="height: 250px; width: 600px;" onclick="myFunction()">Copy
+                text</button>
+            <button style="height: 250px; width: 600px;"
+                onclick="refreshWebsite()">Unesi
+                novi tekst:</button>
+        </div>
+
+        <script>
+        let text = prompt("Unesite tekst koji zelie smanjiti: ");
+        const myArray = text.split(" ");
+        //console.log(myArray);
+
+        let finalArray = [];
+
+        for(let i = 0; i<myArray.length; i++){
+            if(i>=15){
+                // check for element with comma
+               // console.log("looking for period")
+                if(myArray[i].includes('.') || myArray[i].includes('!') || myArray[i].includes('?')){
+                    finalArray.push(myArray[i]);
+                    break;
+                }else{
+                    finalArray.push(myArray[i]);
+                    continue;
+                }
+            }else{
+                //console.log("ovo radi:" + i);
+                finalArray.push(myArray[i]);
+            }
+        }
+        // prviResortOpis
+        console.log(finalArray);
+        const sentence = finalArray.join(" ");
+        const myParagraph = document.querySelector("#prviResortOpis");
+        myParagraph.textContent = sentence;
+       
+        
+
+function refreshWebsite(){
+location.reload();
+}
+
+function myFunction() {
+  // Get the text field
+  var copyText = document.querySelector("#prviResortOpis");
+const text = copyText.textContent;
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(text);
+}
+
+</script>
+    </body>
+</html>
