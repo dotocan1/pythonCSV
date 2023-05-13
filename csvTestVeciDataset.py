@@ -1,11 +1,24 @@
 import csv
 
+def my_function():
+  print("Hello from a function")
 
+def unosImenaStupca():
+    #global imeOriginalneDatoteke
+    #imeDat = input("Unesite ime originalne datoteke: ")
+    #imeOriginalneDatoteke = "./${imeDat}.csv"
+    global imeStupcaZamjena
+    imeStupcaZamjena = input("Unesite ime stupca kojeg zelite izmijeniti: ")
+    print(imeStupcaZamjena)
+    global imeOutputDatoteke
+    imeOutputDatoteke = f"{imeStupcaZamjena}_EDITED.csv"
 
 imeStupcaZamjena = "PROPERTY"
 zamjenaVrijednost = "zamjenaVrijednost"
 imeOriginalneDatoteke = "./drugiMailTablicaCSV.csv"
 imeOutputDatoteke = "testOutputFile.csv"
+
+unosImenaStupca()
 
 with open(imeOriginalneDatoteke, newline="", encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile, delimiter=";")
@@ -14,8 +27,6 @@ with open(imeOriginalneDatoteke, newline="", encoding="utf-8") as csvfile:
         row[imeStupcaZamjena] = zamjenaVrijednost
         # Append the modified row to the list
         new_rows.append(row)
-        row
-        break
 
     # Reset the file pointer to the beginning of the file
 
@@ -24,7 +35,6 @@ with open(imeOriginalneDatoteke, newline="", encoding="utf-8") as csvfile:
 
     with open(imeOutputDatoteke, "w", newline="", encoding="utf-8") as file:
         # Create a DictWriter object for the output file
-        print(new_rows)
         writer = csv.DictWriter(file, reader.fieldnames)
 
         # Write the header row
