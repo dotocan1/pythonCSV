@@ -11,12 +11,10 @@ with open(imeOriginalneDatoteke, newline="", encoding="utf-8") as csvfile:
     for row in reader:
         row[imeStupcaZamjena] = zamjenaVrijednost
         # Append the modified row to the list
-
         new_rows.append(row)
-    for row in new_rows:
-        #print(row[imeStupcaZamjena])
+        row
         break
-        
+
     # Reset the file pointer to the beginning of the file
 
     csvfile.seek(0)
@@ -24,7 +22,7 @@ with open(imeOriginalneDatoteke, newline="", encoding="utf-8") as csvfile:
 
     with open(imeOutputDatoteke, "w", newline="", encoding="utf-8") as file:
         # Create a DictWriter object for the output file
-        print(reader.fieldnames)
+        print(new_rows)
         writer = csv.DictWriter(file, reader.fieldnames)
 
         # Write the header row
