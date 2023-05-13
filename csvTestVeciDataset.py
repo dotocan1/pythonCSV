@@ -1,17 +1,16 @@
 import csv
 
-def my_function():
-  print("Hello from a function")
+
 
 def unosImenaStupca():
-    #global imeOriginalneDatoteke
-    #imeDat = input("Unesite ime originalne datoteke: ")
-    #imeOriginalneDatoteke = "./${imeDat}.csv"
+    global imeOriginalneDatoteke
+    imeDat = input("Unesite ime originalne datoteke: ")
+    imeOriginalneDatoteke = f"./{imeDat}.csv"
     global imeStupcaZamjena
     imeStupcaZamjena = input("Unesite ime stupca kojeg zelite izmijeniti: ")
     print(imeStupcaZamjena)
     global imeOutputDatoteke
-    imeOutputDatoteke = f"{imeStupcaZamjena}_EDITED.csv"
+    imeOutputDatoteke = f"{imeDat}_EDITED.csv"
 
 imeStupcaZamjena = "PROPERTY"
 zamjenaVrijednost = "zamjenaVrijednost"
