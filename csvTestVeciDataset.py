@@ -1,6 +1,6 @@
 import csv
 
-imeStupcaZamjena = "imeStupcaZamjena"
+imeStupcaZamjena = "PROPERTY"
 zamjenaVrijednost = "zamjenaVrijednost"
 imeOriginalneDatoteke = "./drugiMailTablicaCSV.csv"
 imeOutputDatoteke = "testOutputFile.csv"
@@ -9,7 +9,7 @@ with open(imeOriginalneDatoteke, newline="", encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile, delimiter=";")
     new_rows = []
     for row in reader:
-        row["PROPERTY"] = zamjenaVrijednost
+        row[imeStupcaZamjena] = zamjenaVrijednost
         # Append the modified row to the list
 
         new_rows.append(row)
