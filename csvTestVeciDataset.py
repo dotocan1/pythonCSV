@@ -1,5 +1,7 @@
 import csv
 
+
+
 imeStupcaZamjena = "PROPERTY"
 zamjenaVrijednost = "zamjenaVrijednost"
 imeOriginalneDatoteke = "./drugiMailTablicaCSV.csv"
