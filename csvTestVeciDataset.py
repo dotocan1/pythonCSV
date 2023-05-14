@@ -16,7 +16,7 @@ def unosImenaStupca():
     # imeOutputDatoteke = f"{imeDat}_EDITED.csv"
     odabir = input("Odaberite sta zelite napraviti s tekstom:\n"
     "1) Manualno upisi s kojom vrijednoscu kojom zelis\n"
-    "2) Skrati recenicu na odredeni broj rijeci\n")
+    "2) Skrati recenicu na odredeni broj slova\n")
     if odabir == "1":
         izmijenaTekstaSaRijeci()
         print("odabrano")
