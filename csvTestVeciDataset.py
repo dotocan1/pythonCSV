@@ -23,23 +23,18 @@ def skratiNaOdredeniBrojZnamenaka(p_recenica, maksElemenata):
             # print(editedSentence)
             return editedSentence
         # ako 100. znamenka nije tocka, nastavi slagat rijeci
-        elif brojac == len(words)-1:
-            mySentence.append(x)
-            editedSentence = " ".join(mySentence)
-            return editedSentence  
         else:
             mySentence.append(x)
-            brojac+=1
 
 def unosImenaStupca():
-    # global imeOriginalneDatoteke
-    # imeDat = input("Unesite ime originalne datoteke: ")
-    # imeOriginalneDatoteke = f"./{imeDat}.csv"
-    # global imeStupcaZamjena
-    # imeStupcaZamjena = input("Unesite ime stupca kojeg zelite izmijeniti: ")
-    # print(imeStupcaZamjena)
-    # global imeOutputDatoteke
-    # imeOutputDatoteke = f"{imeDat}_EDITED.csv"
+    global imeOriginalneDatoteke
+    imeDat = input("Unesite ime originalne datoteke: ")
+    imeOriginalneDatoteke = f"./{imeDat}.csv"
+    global imeStupcaZamjena
+    imeStupcaZamjena = input("Unesite ime stupca kojeg zelite izmijeniti: ")
+    print(imeStupcaZamjena)
+    global imeOutputDatoteke
+    imeOutputDatoteke = f"{imeDat}_EDITED.csv"
     odabir = input("Odaberite sta zelite napraviti s tekstom:\n"
     "1) Manualno upisi s kojom vrijednoscu kojom zelis\n"
     "2) Skrati recenicu na odredeni broj slova\n")
