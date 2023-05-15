@@ -27,55 +27,61 @@ def skratiNaOdredeniBrojZnamenaka(p_recenica, maksElemenata):
             mySentence.append(x)
 
 def unosImenaStupca():
-    global imeOriginalneDatoteke
-    imeDat = input("Unesite ime originalne datoteke: ")
-    imeOriginalneDatoteke = f"./{imeDat}.csv"
-    global imeStupcaZamjena
-    imeStupcaZamjena = input("Unesite ime stupca kojeg zelite izmijeniti: ")
-    print(imeStupcaZamjena)
-    global imeOutputDatoteke
-    imeOutputDatoteke = f"{imeDat}_EDITED.csv"
+    # global imeOriginalneDatoteke
+    # imeDat = input("Unesite ime originalne datoteke: ")
+    # imeOriginalneDatoteke = f"./{imeDat}.csv"
+    # global imeStupcaZamjena
+    # imeStupcaZamjena = input("Unesite ime stupca kojeg zelite izmijeniti: ")
+    # print(imeStupcaZamjena)
+    # global imeOutputDatoteke
+    # imeOutputDatoteke = f"{imeDat}_EDITED.csv"
     odabir = input("Odaberite sta zelite napraviti s tekstom:\n"
     "1) Manualno upisi s kojom vrijednoscu kojom zelis\n"
     "2) Skrati recenicu na odredeni broj slova\n")
     if odabir == "1":
         maksElem = input("Na koliko znamenki zelite skratiti recenicu:")
-        citanjeIZapisivanjeDatoteke()
     elif odabir == "2":
         # zamjenaVrijednost = skratiNaOdredeniBrojZnamenaka(recenica,100)
-        exit
+        citanjeDatoteke(imeOriginalneDatoteke)
+        editDatoteke(new_rows, imeStupcaZamjena)
+        print(edited_rows)
     else:
         sys.exit()
 
-def citanjeIZapisivanjeDatoteke(p_imeOriginalneDatoteke, p_imeOutputDatoteke):
+def citanjeDatoteke(p_imeOriginalneDatoteke):
+    global new_rows
     with open(p_imeOriginalneDatoteke, newline="", encoding="utf-8") as csvfile:
         reader = csv.DictReader(csvfile, delimiter=";")
-        new_rows = []
         for row in reader:
-            row[imeStupcaZamjena] = zamjenaVrijednost
+            # row[p_imeStupcaZamjena] = zamjenaVrijednost
             # Append the modified row to the list
             new_rows.append(row)
 
     # Reset the file pointer to the beginning of the file
 
-        csvfile.seek(0)
-    # Zapisivanje u datoteku
+        #csvfile.seek(0)
+        # Zapisivanje u datoteku
+def editDatoteke(p_new_rows, p_imeStupcaZamjena):
+    global edited_rows
+    for row in p_new_rows:
+        row[p_imeStupcaZamjena] = zamjenaVrijednost
+        edited_rows.append(row)
+        # with open(p_imeOutputDatoteke, "w", newline="", encoding="utf-8") as file:
+        #     # Create a DictWriter object for the output file
+        #     writer = csv.DictWriter(file, reader.fieldnames)
 
-        with open(p_imeOutputDatoteke, "w", newline="", encoding="utf-8") as file:
-            # Create a DictWriter object for the output file
-            writer = csv.DictWriter(file, reader.fieldnames)
+        #     # Write the header row
+        #     writer.writeheader()
 
-            # Write the header row
-            writer.writeheader()
+        #     # Write the data rows
+        #     for row in new_rows:
+        #         writer.writerow(row)
 
-            # Write the data rows
-            for row in new_rows:
-                writer.writerow(row)
-                # print("radi")
+imeStupcaZamjena = "PROPERTY"
+zamjenaVrijednost = "zamjenaVrijednost"
+imeOriginalneDatoteke = "./drugiMailTablicaCSV.csv"
+imeOutputDatoteke = "testOutputFile.csv"
 
-# imeStupcaZamjena = "PROPERTY"
-# zamjenaVrijednost = "zamjenaVrijednost"
-# imeOriginalneDatoteke = "./drugiMailTablicaCSV.csv"
-# imeOutputDatoteke = "testOutputFile.csv"
-
+new_rows = []
+edited_rows = []
 unosImenaStupca()
