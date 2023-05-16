@@ -1,5 +1,6 @@
 import csv
 import sys
+import re
 
 def izmijenaTekstaSaRijeci():
     global zamjenaVrijednost
@@ -7,30 +8,42 @@ def izmijenaTekstaSaRijeci():
 
 def skratiNaOdredeniBrojZnamenaka(p_recenica, maksElemenata):
     global zamjenaVrijednost
-    words = p_recenica.split()
     mySentence = []
     brojacZnamenka = 0
     brojac = 0
-    print(len(words))
+    words = [i for j in p_recenica.split() for i in (j, ' ')][:-1]
+    # print(len(words))
     # slazi recenicu rijec po rijec dok ne dodes do 100 znamenka
-    for x in words:
-        print(x)
-        brojacZnamenka += len(x)
-        zadnjiElementRijeci = x[len(x)-1]
+    print(f"Ovo je recenica: {words}")
+    for word in words:
+        brojacZnamenka += len(word)
+        zadnjiElementRijeci = word[len(word)-1]
+        print(word)
+        print(f"Ovo je brojac znamenki: {brojacZnamenka}")
+        print(f"Ovo je zadnjiElementRijeci: {zadnjiElementRijeci}")
+        print(f"Ovo je maks element: {maksElemenata}")
         # ako je 100. znamenka tocka, slozi recenica
-        if brojacZnamenka <= maksElemenata and x==words[len(words)-1]:
-            mySentence.append(x)
-            editedSentence = " ".join(mySentence)
+        if brojacZnamenka <= maksElemenata and word==words[len(words)-1]:
+            print("Ima manje rijeci svekupno")
+            print(f"Ovo je zadnji element rijeci {zadnjiElementRijeci}")
+            print(f"Ovo je rijec {word} a ovo je zadnja rijec {words[len(words)-1]}")
+            print(f"A ovo je brojac znamenka {brojacZnamenka} a ovo je maks elementi: {maksElemenata}")
+            mySentence.append(word)
+            editedSentence = "".join(mySentence)
             # print(editedSentence)
             return editedSentence
-        elif(brojacZnamenka >= maksElemenata and (zadnjiElementRijeci == "." or zadnjiElementRijeci == "?" or zadnjiElementRijeci == "!")):
-            mySentence.append(x)
-            editedSentence = " ".join(mySentence)
+        elif zadnjiElementRijeci == "." and brojacZnamenka > maksElemenata:
+            print("Trazi se tocka")
+            print(f"Ovo je zadnji element rijeci {zadnjiElementRijeci}")
+            print(f"Ovo je rijec {word} a ovo je zadnja rijec {words[len(words)-1]}")
+            print(f"A ovo je brojac znamenka {brojacZnamenka} a ovo je maks elementi: {maksElemenata}")
+            mySentence.append(word)
+            editedSentence = "".join(mySentence)
             # print(editedSentence)
             return editedSentence
         # ako 100. znamenka nije tocka, nastavi slagat rijeci
         else:
-            mySentence.append(x)
+            mySentence.append(word)
 
 def unosImenaStupca():
     global imeOriginalneDatoteke
@@ -85,7 +98,7 @@ def spremanjeEditiraneDatoteke(p_imeOutputDatoteke):
         writer.writeheader()
 
         # Write the data rows
-        for row in new_rows:
+        for row in edited_rows:
             writer.writerow(row)
 
 imeStupcaZamjena = "PROPERTY"
