@@ -8,16 +8,22 @@ def izmijenaTekstaSaRijeci():
 def skratiNaOdredeniBrojZnamenaka(p_recenica, maksElemenata):
     global zamjenaVrijednost
     words = p_recenica.split()
-    # print(words)
     mySentence = []
     brojacZnamenka = 0
     brojac = 0
+    print(len(words))
     # slazi recenicu rijec po rijec dok ne dodes do 100 znamenka
     for x in words:
+        print(x)
         brojacZnamenka += len(x)
         zadnjiElementRijeci = x[len(x)-1]
         # ako je 100. znamenka tocka, slozi recenica
-        if(brojacZnamenka >= maksElemenata and (zadnjiElementRijeci == "." or zadnjiElementRijeci == "?" or zadnjiElementRijeci == "!")):
+        if brojacZnamenka <= maksElemenata and x==words[len(words)-1]:
+            mySentence.append(x)
+            editedSentence = " ".join(mySentence)
+            # print(editedSentence)
+            return editedSentence
+        elif(brojacZnamenka >= maksElemenata and (zadnjiElementRijeci == "." or zadnjiElementRijeci == "?" or zadnjiElementRijeci == "!")):
             mySentence.append(x)
             editedSentence = " ".join(mySentence)
             # print(editedSentence)
