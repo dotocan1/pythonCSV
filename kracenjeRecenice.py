@@ -18,5 +18,3 @@ for x in words:
     # ako 100. znamenka nije tocka, nastavi slagat rijeci
     else:
         mySentence.append(x)
-
-

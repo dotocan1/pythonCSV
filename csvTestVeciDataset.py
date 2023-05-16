@@ -67,13 +67,13 @@ def editDatoteke(p_imeStupcaZamjena):
     global edited_rows
     for row in new_rows:
         recenica = row[p_imeStupcaZamjena]
-        row[p_imeStupcaZamjena] = skratiNaOdredeniBrojZnamenaka(recenica, 5)
+        row[p_imeStupcaZamjena] = skratiNaOdredeniBrojZnamenaka(recenica, 180)
         edited_rows.append(row)
 
 def spremanjeEditiraneDatoteke(p_imeOutputDatoteke):
     with open(p_imeOutputDatoteke, "w", newline="", encoding="utf-8") as file:
         # Create a DictWriter object for the output file
-        writer = csv.DictWriter(file, imenaHeadera)
+        writer = csv.DictWriter(file, imenaHeadera, delimiter=";")
 
         # Write the header row
         writer.writeheader()
