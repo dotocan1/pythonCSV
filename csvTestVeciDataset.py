@@ -54,18 +54,16 @@ def unosImenaStupca():
     print(imeStupcaZamjena)
     global imeOutputDatoteke
     imeOutputDatoteke = f"{imeDat}_EDITED.csv"
-    odabir = input("Odaberite sta zelite napraviti s tekstom:\n"
-    "1) Manualno upisi s kojom vrijednoscu kojom zelis\n"
-    "2) Skrati recenicu na odredeni broj slova\n")
-    if odabir == "1":
-        maksElem = input("Na koliko znamenki zelite skratiti recenicu:")
-    elif odabir == "2":
+    # odabir = input("Odaberite sta zelite napraviti s tekstom:\n"
+    # "1) Manualno upisi s kojom vrijednoscu kojom zelis\n"
+    # "2) Skrati recenicu na odredeni broj slova\n")
+    # if odabir == "1":
+    #     maksElem = input("Na koliko znamenki zelite skratiti recenicu:")
+    # elif odabir == "2":
         # zamjenaVrijednost = skratiNaOdredeniBrojZnamenaka(recenica,100)
-        citanjeDatoteke(imeOriginalneDatoteke)
-        editDatoteke(imeStupcaZamjena)
-        spremanjeEditiraneDatoteke(imeOutputDatoteke)
-    else:
-        sys.exit()
+    citanjeDatoteke(imeOriginalneDatoteke)
+    editDatoteke(imeStupcaZamjena)
+    spremanjeEditiraneDatoteke(imeOutputDatoteke)
 
 def citanjeDatoteke(p_imeOriginalneDatoteke):
     global new_rows
