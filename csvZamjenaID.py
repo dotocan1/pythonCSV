@@ -1,11 +1,11 @@
 import csv
 
-def zamjenaSaPripadnomVrijednoscu():
+def zamjenaSaPripadnomVrijednoscu(p_imeStupcaUsporedbe, p_imeStupcaZamjena, p_vrijednostStupcaUsporedbe, p_zamjenskaVrijednost):
     global edited_rows
     for row in new_rows:
         # print(row)
-        if row["PROPERTY_DESTINATION"] == "Dubrovnik":
-            row["PROPERTY_ID"] = "zamjenaVrijednost"
+        if row[p_imeStupcaUsporedbe] == p_vrijednostStupcaUsporedbe:
+            row[p_imeStupcaZamjena] = p_zamjenskaVrijednost
             edited_rows.append(row)
         else:
             edited_rows.append(row)
@@ -35,10 +35,28 @@ def spremanjeEditiraneDatoteke(p_imeOutputDatoteke):
         for row in edited_rows:
             writer.writerow(row)
 
+def unosImenaStupca():
+    # global imeOriginalneDatoteke
+    # global imeStupcaZamjena
+    # global imeOutputDatoteke
 
+
+    imeDat = input("Unesite ime originalne datoteke: ")
+    imeOriginalneDatoteke = f"./{imeDat}.csv"
+    imeStupcaZamjena = input("Unesite ime stupca kojeg zelite izmijeniti: ")
+    imeOutputDatoteke = f"{imeDat}_EDITED.csv"
+    imeStupcaUsporedbe = input("Unesite ime stupca usporedbe:")
+    vrijednostStupcaUsporedbe = input("Unesite vrijednost stupca usporedbe:")
+    zamjenskaVrijednost = input("S kojim podatkom zelite zamjeniti vrijednost:")
+    citanjeDatoteke(imeOriginalneDatoteke, imeStupcaZamjena)
+    zamjenaSaPripadnomVrijednoscu(imeStupcaUsporedbe, imeStupcaZamjena, vrijednostStupcaUsporedbe, zamjenskaVrijednost )
+    spremanjeEditiraneDatoteke(imeOutputDatoteke)
 
 
 imeStupcaZamjena = "PROPERTY_ID"
+imeStupcaUsporedbe = "PROPERTY_DESTINATION"
+vrijednostStupcaUsporedbe = "Dubrovnik"
+zamjenskaVrijednost = "zamjenskaVrijednost"
 imeOriginalneDatoteke = "./3CAFIX.csv"
 imeOutputDatoteke = "testOutputFile.csv"
 
@@ -46,6 +64,6 @@ new_rows = []
 imenaHeadera = []
 edited_rows = []
 
-citanjeDatoteke(imeOriginalneDatoteke, imeStupcaZamjena)
-zamjenaSaPripadnomVrijednoscu()
-spremanjeEditiraneDatoteke(imeOutputDatoteke)
+unosImenaStupca()
+
+
