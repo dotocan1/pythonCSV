@@ -16,7 +16,7 @@ def skratiNaOdredeniBrojZnamenaka(p_recenica, maksElemenata):
             editedSentence = "".join(mySentence)
             # print(editedSentence)
             return editedSentence
-        elif zadnjiElementRijeci == "." and brojacZnamenka > maksElemenata:
+        elif (zadnjiElementRijeci == "." or zadnjiElementRijeci == "!" or zadnjiElementRijeci == ".")  and brojacZnamenka > maksElemenata:
             mySentence.append(word)
             editedSentence = "".join(mySentence)
             # print(editedSentence)
@@ -46,15 +46,13 @@ def unosImenaStupca():
     # elif odabir == "2":
         # zamjenaVrijednost = skratiNaOdredeniBrojZnamenaka(recenica,100)
     citanjeDatoteke(imeOriginalneDatoteke, imeStupcaZamjena)
-    brojac = 0
-    print(edited_rows)
-    edited_rows = ["test"]
     for sentence in sentences_for_editing_rows:
-        edited_rows[brojac] = skratiNaOdredeniBrojZnamenaka(sentence,100)
+        edited_rows.append(skratiNaOdredeniBrojZnamenaka(sentence,20))
     brojac = 0
 
     for row in new_rows:
         row[imeStupcaZamjena] = edited_rows[brojac]
+        brojac+=1
     spremanjeEditiraneDatoteke(imeOutputDatoteke)
 
 def citanjeDatoteke(p_imeOriginalneDatoteke, p_imeStupcaZamjena):
