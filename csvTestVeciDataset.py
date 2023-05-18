@@ -3,6 +3,7 @@ import csv
 
 def skratiNaOdredeniBrojZnamenaka(p_recenica, maksElemenata):
     mySentence = []
+    print(p_recenica)
     brojacZnamenka = 0
     words = [i for j in p_recenica.split() for i in (j, ' ')][:-1]
     # print(len(words))
@@ -14,16 +15,17 @@ def skratiNaOdredeniBrojZnamenaka(p_recenica, maksElemenata):
         if brojacZnamenka <= maksElemenata and word==words[len(words)-1]:
             mySentence.append(word)
             editedSentence = "".join(mySentence)
-            # print(editedSentence)
+            print(f"Prvi odabir: {mySentence}")
             return editedSentence
-        elif (zadnjiElementRijeci == "." or zadnjiElementRijeci == "!" or zadnjiElementRijeci == ".")  and brojacZnamenka > maksElemenata:
+        elif (zadnjiElementRijeci == "." or zadnjiElementRijeci == "!" or zadnjiElementRijeci == "?")  and brojacZnamenka >= maksElemenata:
             mySentence.append(word)
             editedSentence = "".join(mySentence)
-            # print(editedSentence)
+            print(f"Drugi odabir: {mySentence}")
             return editedSentence
         # ako 100. znamenka nije tocka, nastavi slagat rijeci
         else:
             mySentence.append(word)
+            print(f"Treci odabir: {mySentence}")
 
 def unosImenaStupca():
     global imeOriginalneDatoteke
@@ -67,6 +69,7 @@ def citanjeDatoteke(p_imeOriginalneDatoteke, p_imeStupcaZamjena):
             # Append the modified row to the list
             new_rows.append(row)
             sentences_for_editing_rows.append(row[p_imeStupcaZamjena])
+            # print(row[p_imeStupcaZamjena])
 
 def spremanjeEditiraneDatoteke(p_imeOutputDatoteke):
     with open(p_imeOutputDatoteke, "w", newline="", encoding="utf-8") as file:
@@ -80,8 +83,8 @@ def spremanjeEditiraneDatoteke(p_imeOutputDatoteke):
         for row in new_rows:
             writer.writerow(row)
 
-imeStupcaZamjena = "DOZIVLJAJ_3_TEKST"
-imeOriginalneDatoteke = "./tablicadozivljajanovidestinationid.csv"
+imeStupcaZamjena = "Opis"
+imeOriginalneDatoteke = "./testiranjeCSVa.csv"
 imeOutputDatoteke = "testOutputFile.csv"
 
 new_rows = []
