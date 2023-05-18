@@ -1,7 +1,10 @@
 import csv
 # import sys
 
-def skratiNaOdredeniBrojZnamenaka(p_recenica, maksElemenata):
+
+### JAKO BITNO!!!!
+### KRATI SE RECENICA SAMO AKO JE NAKON TOCKE RAZMAK
+def skratiNaOdredeniBrojZnamenaka(p_recenica, p_maksElemenata):
     mySentence = []
     print(p_recenica)
     brojacZnamenka = 0
@@ -12,12 +15,12 @@ def skratiNaOdredeniBrojZnamenaka(p_recenica, maksElemenata):
         brojacZnamenka += len(word)
         zadnjiElementRijeci = word[len(word)-1]
         # ako je 100. znamenka tocka, slozi recenica
-        if brojacZnamenka <= maksElemenata and word==words[len(words)-1]:
+        if brojacZnamenka <= p_maksElemenata and word==words[len(words)-1]:
             mySentence.append(word)
             editedSentence = "".join(mySentence)
             print(f"Prvi odabir: {mySentence}")
             return editedSentence
-        elif (zadnjiElementRijeci == "." or zadnjiElementRijeci == "!" or zadnjiElementRijeci == "?")  and brojacZnamenka >= maksElemenata:
+        elif (zadnjiElementRijeci == "." or zadnjiElementRijeci == "!" or zadnjiElementRijeci == "?")  and brojacZnamenka >= p_maksElemenata:
             mySentence.append(word)
             editedSentence = "".join(mySentence)
             print(f"Drugi odabir: {mySentence}")
@@ -35,21 +38,16 @@ def unosImenaStupca():
     global new_rows
     global edited_rows
 
-    # imeDat = input("Unesite ime originalne datoteke: ")
-    # imeOriginalneDatoteke = f"./{imeDat}.csv"
-    # imeStupcaZamjena = input("Unesite ime stupca kojeg zelite izmijeniti: ")
-    # print(imeStupcaZamjena)
-    # imeOutputDatoteke = f"{imeDat}_EDITED.csv"
-    # odabir = input("Odaberite sta zelite napraviti s tekstom:\n"
-    # "1) Manualno upisi s kojom vrijednoscu kojom zelis\n"
-    # "2) Skrati recenicu na odredeni broj slova\n")
-    # if odabir == "1":
-    #     maksElem = input("Na koliko znamenki zelite skratiti recenicu:")
-    # elif odabir == "2":
-        # zamjenaVrijednost = skratiNaOdredeniBrojZnamenaka(recenica,100)
+    imeDat = input("Unesite ime originalne datoteke: ")
+    imeOriginalneDatoteke = f"./{imeDat}.csv"
+    imeStupcaZamjena = input("Unesite ime stupca kojeg zelite izmijeniti: ")
+    print(imeStupcaZamjena)
+    imeOutputDatoteke = f"{imeDat}_EDITED.csv"
+    
     citanjeDatoteke(imeOriginalneDatoteke, imeStupcaZamjena)
+    maksElementa = int(input("Upisite broj na koliko znamenki zelite skratiti recenicu:"))
     for sentence in sentences_for_editing_rows:
-        edited_rows.append(skratiNaOdredeniBrojZnamenaka(sentence,20))
+        edited_rows.append(skratiNaOdredeniBrojZnamenaka(sentence,maksElementa))
     brojac = 0
 
     for row in new_rows:
@@ -83,13 +81,13 @@ def spremanjeEditiraneDatoteke(p_imeOutputDatoteke):
         for row in new_rows:
             writer.writerow(row)
 
-imeStupcaZamjena = "Opis"
-imeOriginalneDatoteke = "./testiranjeCSVa.csv"
-imeOutputDatoteke = "testOutputFile.csv"
+# imeStupcaZamjena = "Opis"
+# imeOriginalneDatoteke = "./testiranjeCSVa.csv"
+# imeOutputDatoteke = "testOutputFile.csv"
 
 new_rows = []
 edited_rows = []
 sentences_for_editing_rows = []
 imenaHeadera = []
-zamjenaVrijednost = "aaaaa"
+zamjenaVrijednost = ""
 unosImenaStupca()

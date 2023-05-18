@@ -15,7 +15,7 @@ def citanjeDatoteke(p_imeOriginalneDatoteke, p_imeStupcaZamjena):
     global new_rows
     global imenaHeadera
     with open(p_imeOriginalneDatoteke, newline="", encoding="utf-8") as csvfile:
-        reader = csv.DictReader(csvfile, delimiter=";")
+        reader = csv.DictReader(csvfile, delimiter=",")
         imenaHeadera = reader.fieldnames
         for row in reader:
             # row[p_imeStupcaZamjena] = zamjenaVrijednost
