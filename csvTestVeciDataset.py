@@ -14,7 +14,7 @@ def skratiNaOdredeniBrojZnamenaka(p_recenica, p_maksElemenata):
     for word in words:
         brojacZnamenka += len(word)
         zadnjiElementRijeci = word[len(word)-1]
-        # ako je 100. znamenka tocka, slozi recenica
+        # ako je broj znamenki manji od trazenog
         if brojacZnamenka <= p_maksElemenata and word==words[len(words)-1]:
             mySentence.append(word)
             editedSentence = "".join(mySentence)
@@ -22,6 +22,8 @@ def skratiNaOdredeniBrojZnamenaka(p_recenica, p_maksElemenata):
             return editedSentence
         elif (zadnjiElementRijeci == "." or zadnjiElementRijeci == "!" or zadnjiElementRijeci == "?")  and brojacZnamenka >= p_maksElemenata:
             mySentence.append(word)
+            if brojacZnamenka >= 160:
+               mySentence.append("trebaFixati")
             editedSentence = "".join(mySentence)
             print(f"Drugi odabir: {mySentence}")
             return editedSentence
