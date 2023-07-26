@@ -6,7 +6,7 @@ new_folder_path = "converted"
 print(os.listdir(folder_path))
 
 # Just change the name of this variable
-new_name = "265x250"
+new_name = "_FIXED"
 
 
 def rename_files(folder_path, new_name):
@@ -17,7 +17,8 @@ def rename_files(folder_path, new_name):
         if file_name == "renameFiles.py":
             continue
         # Construct the new file name with the specified string
-        new_file_name = new_name + "_" + file_name
+        # Change this if you want a new naming method
+        new_file_name = file_name + new_name
 
         # Build the full paths of the original and new files
         original_path = os.path.join(folder_path, file_name)
@@ -25,6 +26,6 @@ def rename_files(folder_path, new_name):
 
         # Rename the file
         os.rename(original_path, new_path)
-        print(f"Renamed {file_name} to {new_file_name}"
+        print(f"Renamed {file_name} to {new_file_name}")
 
 rename_files(folder_path, new_name)
